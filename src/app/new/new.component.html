@@ -1,0 +1,107 @@
+
+<div class="main">
+    <h1>Just a few simple steps before we know it's you</h1>
+    <div _ngcontent-serverapp-c3="" class="form-stepper">
+        <div _ngcontent-serverapp-c3="" class="joiner"></div>
+        <div class="btn-main">
+            <button class="btn" [ngClass]=" {'blue':selected=='btn1' || selected=='btn2' || selected=='btn3' || selected=='btn4'}" (click)="Color(btn1)"> 1 </button>
+            <button class="btn" [ngClass]=" {'blue':selected=='btn2' || selected=='btn3' || selected=='btn4'}"  (click)="Color(btn2)" > 2 </button>
+            <button class="btn" [ngClass]=" {'blue':selected=='btn3' || selected=='btn4'}"  (click)="Color(btn3)" >3</button>
+            <button class="btn" [ngClass]=" {'blue':selected=='btn4'}"  (click)="Color(btn4)" >  4 </button>
+        </div>
+    
+    </div>
+  <div class="first-component"  *ngIf="selected=='btn1'">
+    <h3>Your registered mobile number</h3>
+    <form  #firstcomponent="ngForm" class="form" (ngSubmit)="onSubmit(firstcomponent.value)">
+      <input class="input" type="text" name="phone" required [(ngModel)]="phoneNo" >
+      <button type="submit" (click)="Color(btn2)">Log  <i class="fa-solid fa-house"></i></button>
+    </form>
+  </div>
+  <div class="first-component"  *ngIf="selected=='btn2'">
+    <h1>Kindly verify the pin code of your residential address</h1>
+      <form #firstcomponent="ngForm" class="form">
+          
+          <label class="label">
+            <input class="input" type="radio" class="radio" name="phone" required>
+              <span class="checkmark" (click)="onClick(format1)">
+                  601302
+                  <span *ngIf="selectedfont=='format1'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+              </span>
+          </label>
+          <label class="label">
+            <input class="input" type="radio" class="radio" name="phone" required>
+              <span class="checkmark" (click)="onClick(format2)">
+                  601302
+                  <span *ngIf="selectedfont=='format2'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+              </span>
+       
+          </label>
+          <label class="label">
+            <input class="input" type="radio" class="radio" name="phone" required>
+              <span class="checkmark" (click)="onClick(format3); Color(btn3)">
+                  601302
+                  
+                  <span *ngIf="selectedfont=='format3'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+              </span>
+             
+          </label>
+          <label class="label">
+            <input class="input" type="radio" class="radio" name="phone" required>
+             <span class="checkmark"  (click)="onClick(format4)">
+                  601302
+                  <span *ngIf="selectedfont=='format4'" class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+              </span>
+         
+          </label>
+  
+      </form>
+  </div>
+  <div class="first-component"  *ngIf="selected=='btn3'">
+    <h1>Kindly verify your Year of Birth</h1>
+    <form #firstcomponent="ngForm" class="form">
+        <input class="input" type="radio" class="radio" name="phone" required>
+        <label class="label">
+            <span class="checkmark" (click)="changeYears(date1)">
+                1984
+                <span *ngIf="selectedyear=='date1'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+            </span>
+     
+        </label>
+        <label class="label">
+             <span class="checkmark" (click)="changeYears(date2)">
+                1984
+                <span *ngIf="selectedyear=='date2'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+            </span>
+      
+        </label>
+        <label class="label">
+            <span class="checkmark" (click)="changeYears(date3); Color(btn4)">
+                1984
+                
+                <span *ngIf="selectedyear=='date3'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+            </span>
+            
+        </label>
+        <label class="label">
+             <span class="checkmark"  (click)="changeYears(date4)">
+                1984
+                <span *ngIf="selectedyear=='date4'" class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
+            </span>
+       
+        </label>
+  
+    </form>
+  </div>
+  <div class="first-component"  *ngIf="selected=='btn4'">
+    <h1>Enter the otp</h1>
+      <form  #firstcomponent="ngForm" class="form" (ngSubmit)="onSubmit(firstcomponent.value)">
+        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
+        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
+        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
+        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
+        <button class="otp-btn" type="submit"> Login →</button>
+      </form>
+  </div>
+  
+  </div>
