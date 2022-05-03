@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewComponent } from './new/new.component';
+import { NgOtpInputModule } from  'ng-otp-input';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { NewComponent } from './new/new.component';
   imports: [
     BrowserModule,
     FormsModule,
+    NgOtpInputModule,
     AppRoutingModule
   ],
   providers: [],

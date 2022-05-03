@@ -1,4 +1,4 @@
-
+<div class="body">
 <div class="main">
     <h1>Just a few simple steps before we know it's you</h1>
     <div _ngcontent-serverapp-c3="" class="form-stepper">
@@ -11,14 +11,14 @@
         </div>
     
     </div>
-  <div class="first-component"  *ngIf="selected=='btn1'">
+  <div class="component"  *ngIf="selected=='btn1'">
     <h3>Your registered mobile number</h3>
     <form  #firstcomponent="ngForm" class="form" (ngSubmit)="onSubmit(firstcomponent.value)">
       <input class="input" type="text" name="phone" required [(ngModel)]="phoneNo" >
-      <button type="submit" (click)="Color(btn2)">Log  <i class="fa-solid fa-house"></i></button>
+      <button type="submit" (click)="Color(btn2)">Login <i class="fa-solid fa-house"></i></button>
     </form>
   </div>
-  <div class="first-component"  *ngIf="selected=='btn2'">
+  <div class="component"  *ngIf="selected=='btn2'">
     <h1>Kindly verify the pin code of your residential address</h1>
       <form #firstcomponent="ngForm" class="form">
           
@@ -57,51 +57,49 @@
   
       </form>
   </div>
-  <div class="first-component"  *ngIf="selected=='btn3'">
+  <div class="component"  *ngIf="selected=='btn3'">
     <h1>Kindly verify your Year of Birth</h1>
     <form #firstcomponent="ngForm" class="form">
         <input class="input" type="radio" class="radio" name="phone" required>
         <label class="label">
-            <span class="checkmark" (click)="changeYears(date1)">
-                1984
-                <span *ngIf="selectedyear=='date1'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
-            </span>
-     
+          <span class="checkmark" (click)="changeYears(date1)" [ngClass]="{'background': selectedyear=='date1'}" >
+            <span class="date"> 1984</span> 
+           <span *ngIf="selectedyear=='date1'"  class="checkfont"><i class="fa-solid fa-check"></i></span>
+           </span>
         </label>
         <label class="label">
-             <span class="checkmark" (click)="changeYears(date2)">
-                1984
-                <span *ngIf="selectedyear=='date2'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
-            </span>
+          <span class="checkmark" (click)="changeYears(date2)" [ngClass]="{'background': selectedyear=='date2'}" >
+            <span class="date"> 1984</span> 
+            <span *ngIf="selectedyear=='date2'"  class="checkfont"><i class="fa-solid fa-check"></i></span>
+          </span>
       
         </label>
         <label class="label">
-            <span class="checkmark" (click)="changeYears(date3); Color(btn4)">
-                1984
-                
-                <span *ngIf="selectedyear=='date3'"  class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
-            </span>
+          <span class="checkmark" (click)="changeYears(date3); Color(btn4)" [ngClass]="{'background': selectedyear=='date3'}">
+          <span class="date"> 1984</span> 
+          
+          <span *ngIf="selectedyear=='date3'"  class="checkfont"><i class="fa-solid fa-check"></i></span>
+      </span>
             
         </label>
         <label class="label">
-             <span class="checkmark"  (click)="changeYears(date4)">
-                1984
-                <span *ngIf="selectedyear=='date4'" class="checkfont"><i class="fa-solid fa-circle-check"></i></span>
-            </span>
+          <span class="checkmark"  (click)="changeYears(date4)" [ngClass]="{'background': selectedyear=='date4'}">
+            <span class="date"> 1984</span> 
+            <span *ngIf="selectedyear=='date4'" class="checkfont"><i class="fa-solid fa-check"></i></span>
+        </span>
        
         </label>
   
     </form>
   </div>
-  <div class="first-component"  *ngIf="selected=='btn4'">
+  <div class="component"  *ngIf="selected=='btn4'">
     <h1>Enter the otp</h1>
-      <form  #firstcomponent="ngForm" class="form" (ngSubmit)="onSubmit(firstcomponent.value)">
-        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
-        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
-        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
-        <input class="otp-input" type="text" name="phone" required maxlength="1" style="width: 50px; height: 50px;">
-        <button class="otp-btn" type="submit"> Login →</button>
-      </form>
+    <form  #firstcomponent4="ngForm" class="form" (ngSubmit)="onSubmit(firstcomponent4.value)">
+      <ng-otp-input class="otp-input" (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+      <button class="login otp-btn" type="submit">Login →<i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+
   </div>
   
   </div>
+</div>
