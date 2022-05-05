@@ -7,6 +7,7 @@
   }
   .body{
     font-family: 'Roboto', sans-serif;  
+    
   }
   .main{
     caret-color: black;
@@ -32,10 +33,10 @@ h1{
     max-width: 374px;
     margin-bottom: 45px;
 }
-.form-stepper[_ngcontent-serverApp-c3] {
+.form-stepper{
     position: relative;
 }
-.joiner[_ngcontent-serverApp-c3] {
+.joiner{
     width: 97%;
     border-bottom: 4px dashed rgba(168, 168, 168, 0.2);
     position: relative;
@@ -164,4 +165,17 @@ h1{
   }
   .login i{
       margin-left: 30px;
+  }
+  ::ng-deep .otp-input{
+    background: transparent;
+      border: 0 ;
+      border-bottom: 3px solid #3eb7e5 !important ;
+      border-radius: 0 ;
+      color: white ;
+      margin-right: 15px ;
+      font-size: 36px;
+      opacity: 0.67;
+      font-weight: 700;
+      caret-color: white;
+      width:50px;
   }
